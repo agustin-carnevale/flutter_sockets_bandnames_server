@@ -17,12 +17,12 @@
         socket.on('disconnect', ()=>{
             console.log("Socket disconnected from server");
         });
-
-        socket.emit('message', {
-            name: 'Agustin'
+    
+        socket.on('active-bands', bands => {
+            console.clear();
+            console.table(bands);
         });
-
-        socket.on('message', payload => console.log("message: ", payload))
+       
     </script>
 </body>
 </html>

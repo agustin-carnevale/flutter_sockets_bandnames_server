@@ -8,10 +8,10 @@ const app = express();
 //Node Server
 const server = require('http').createServer(app);
 module.exports.io = require('socket.io')(server);
-require('./sockets/socket');
+require('./src/sockets/socket');
 
 //Public path 
-const publicPath = path.resolve(__dirname, 'public');
+const publicPath = path.resolve(__dirname, 'src/public');
 app.use(express.static(publicPath));
 
 server.listen(process.env.PORT, (err)=>{
